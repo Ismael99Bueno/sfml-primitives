@@ -6,7 +6,7 @@ project "sfml-primitives"
    staticruntime "on"
 
    targetdir("bin/" .. outputdir)
-   objdir("build/" .. outputdir .. "/%{prj.name}")
+   objdir("build/" .. outputdir)
 
    files {"src/**.cpp", "include/**.hpp"}
    includedirs "../**/include"
