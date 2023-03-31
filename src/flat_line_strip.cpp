@@ -1,4 +1,5 @@
 #include "flat_line_strip.hpp"
+#include "debug.hpp"
 
 namespace prm
 {

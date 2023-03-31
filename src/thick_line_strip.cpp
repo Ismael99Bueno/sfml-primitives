@@ -1,5 +1,6 @@
 #include "thick_line_strip.hpp"
 #include "thick_line.hpp"
+#include "debug.hpp"
 
 namespace prm
 {
