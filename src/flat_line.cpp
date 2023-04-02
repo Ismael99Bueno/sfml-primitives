@@ -26,9 +26,9 @@ namespace prm
     void flat_line::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
         sf::Vertex line[2];
-        line[0].position = m_p1;
+        line[0].position = VEC2_AS(m_p1);
         line[0].color = m_color1;
-        line[1].position = m_p2;
+        line[1].position = VEC2_AS(m_p2);
         line[1].color = m_color2;
         target.draw(line, 2, sf::Lines, states);
     }

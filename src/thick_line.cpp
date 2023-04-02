@@ -48,10 +48,12 @@ namespace prm
                         offset = alg::vec2(-dir.y, dir.x) * m_thickness * 0.5f;
 
         sf::Vertex tline[4];
-        tline[0].position = m_p1 + offset;
-        tline[1].position = m_p2 + offset;
-        tline[2].position = m_p2 - offset;
-        tline[3].position = m_p1 - offset;
+        const alg::vec2 p1 = m_p1 + offset, p2 = m_p2 + offset,
+                        p3 = m_p2 - offset, p4 = m_p1 - offset;
+        tline[0].position = VEC2_AS(p1);
+        tline[1].position = VEC2_AS(p2);
+        tline[2].position = VEC2_AS(p3);
+        tline[3].position = VEC2_AS(p4);
         tline[0].color = m_color1;
         tline[1].color = m_color2;
         tline[2].color = m_color2;
@@ -64,10 +66,10 @@ namespace prm
         const float r = 0.5f * m_thickness;
         sf::CircleShape start(r), end(r);
         start.setOrigin(r, r);
-        start.setPosition(m_p1);
+        start.setPosition(VEC2_AS(m_p1));
         start.setFillColor(m_color1);
         end.setOrigin(r, r);
-        end.setPosition(m_p2);
+        end.setPosition(VEC2_AS(m_p2));
         end.setFillColor(m_color2);
         target.draw(start);
         target.draw(end);

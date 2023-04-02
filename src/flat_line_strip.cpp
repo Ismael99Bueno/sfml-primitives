@@ -12,12 +12,12 @@ namespace prm
     {
         for (std::size_t i = 0; i < points.size(); i++)
         {
-            m_vertices[i].position = points[i];
+            m_vertices[i].position = VEC2_AS(points[i]);
             m_vertices[i].color = color;
         }
     }
 
-    void flat_line_strip::append(const alg::vec2 &point) { m_vertices.append({point, m_color}); }
+    void flat_line_strip::append(const alg::vec2 &point) { m_vertices.append({VEC2_AS(point), m_color}); }
     void flat_line_strip::clear() { m_vertices.clear(); }
     void flat_line_strip::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
