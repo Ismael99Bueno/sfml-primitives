@@ -13,9 +13,9 @@ sfml-primitives is a simple C++ library providing line primitive implementations
 sfml-primitives depends on the following libraries:
 
 - [SFML](https://github.com/Ismael99Bueno/SFML): Simple and Fast Multimedia Library
-- [vec-2D](https://github.com/Ismael99Bueno/vec-2D): a 2D vector implementation with usual operations
-- [debug-tools](https://github.com/Ismael99Bueno/debug-tools): a set of tools for debugging
-- [vector-view](https://github.com/Ismael99Bueno/vector-view): a header-only library for modifying the contents of a std::vector without letting the user modify its size
+- [vec-2D](https://github.com/Ismael99Bueno/vec-2D): A 2D vector implementation with usual operations
+- [debug-tools](https://github.com/Ismael99Bueno/debug-tools): A set of tools for debugging
+- [vector-view](https://github.com/Ismael99Bueno/vector-view): A header-only library for modifying the contents of a std::vector without letting the user modify its size
 
 ## Building and Usage
 
