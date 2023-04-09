@@ -3,7 +3,7 @@ project "sfml-primitives"
 
    language "C++"
    cppdialect "C++17"
-   staticruntime "on"
+   
 
    targetdir("bin/" .. outputdir)
    objdir("build/" .. outputdir)
