@@ -25,7 +25,7 @@ namespace prm
     void thick_line_strip::erase(const std::size_t index)
     {
         DBG_ASSERT(index < m_vertices.size(), "Index outside of vector bounds. index: %zu, size: %zu.\n", index, m_vertices.size())
-        m_vertices.erase(m_vertices.begin() + index);
+        m_vertices.erase(m_vertices.begin() + (long)index);
     }
 
     void thick_line_strip::erase(const std::size_t from, const std::size_t to)
@@ -33,7 +33,7 @@ namespace prm
         DBG_ASSERT(from < m_vertices.size(), "Index outside of vector bounds. from: %zu, size: %zu.\n", from, m_vertices.size())
         DBG_ASSERT(to < m_vertices.size(), "Index outside of vector bounds. to: %zu, size: %zu.\n", to, m_vertices.size())
         DBG_ASSERT(from < to, "from index must be lower than to index. from: %zu, to: %zu.\n", from, to)
-        m_vertices.erase(m_vertices.begin() + from, m_vertices.begin() + to);
+        m_vertices.erase(m_vertices.begin() + (long)from, m_vertices.begin() + (long)to);
     }
 
     void thick_line_strip::clear() { m_vertices.clear(); }
