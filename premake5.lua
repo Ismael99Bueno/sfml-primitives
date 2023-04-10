@@ -1,6 +1,6 @@
 project "sfml-primitives"
-   kind "StaticLib"
    staticruntime "off"
+   kind "StaticLib"
 
    language "C++"
    cppdialect "C++17"
