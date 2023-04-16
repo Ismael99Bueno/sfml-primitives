@@ -11,7 +11,7 @@ namespace prm
     {
     }
 
-    thick_line_strip::thick_line_strip(const std::vector<alg::vec2> &points,
+    thick_line_strip::thick_line_strip(const std::vector<glm::vec2> &points,
                                        const sf::Color &color,
                                        const float thickness) : m_vertices(points.size()),
                                                                 m_color(color),
@@ -21,7 +21,7 @@ namespace prm
             m_vertices[i] = {points[i], color};
     }
 
-    void thick_line_strip::append(const alg::vec2 &point) { m_vertices.emplace_back(point, m_color); }
+    void thick_line_strip::append(const glm::vec2 &point) { m_vertices.emplace_back(point, m_color); }
     void thick_line_strip::erase(const std::size_t index)
     {
         DBG_ASSERT(index < m_vertices.size(), "Index outside of vector bounds. index: %zu, size: %zu.\n", index, m_vertices.size())
@@ -52,8 +52,8 @@ namespace prm
 
     const sf::Color &thick_line_strip::color() const { return m_color; }
 
-    const std::vector<std::pair<alg::vec2, sf::Color>> &thick_line_strip::vertices() const { return m_vertices; }
-    utils::vector_view<std::pair<alg::vec2, sf::Color>> thick_line_strip::vertices() { return m_vertices; }
+    const std::vector<std::pair<glm::vec2, sf::Color>> &thick_line_strip::vertices() const { return m_vertices; }
+    utils::vector_view<std::pair<glm::vec2, sf::Color>> thick_line_strip::vertices() { return m_vertices; }
 
     void thick_line_strip::color(const sf::Color &color) { m_color = color; }
     void thick_line_strip::alpha(const float alpha) { m_color.a = (sf::Uint8)(255.f * alpha); }

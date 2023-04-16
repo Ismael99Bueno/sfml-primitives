@@ -1,7 +1,7 @@
 #ifndef SPRING_LINE_HPP
 #define SPRING_LINE_HPP
 
-#include "vec2.hpp"
+#include "glm/vec2.hpp"
 #include <SFML/Graphics.hpp>
 
 namespace prm
@@ -9,8 +9,8 @@ namespace prm
     class spring_line : public sf::Drawable
     {
     public:
-        spring_line(const alg::vec2 &p1,
-                    const alg::vec2 &p2,
+        spring_line(const glm::vec2 &p1,
+                    const glm::vec2 &p2,
                     const sf::Color &color = sf::Color::White);
 
         std::size_t supports_count() const;
@@ -25,17 +25,17 @@ namespace prm
         void right_padding(float right_padding);
         void min_height(float min_height);
 
-        const alg::vec2 &p1() const;
-        const alg::vec2 &p2() const;
+        const glm::vec2 &p1() const;
+        const glm::vec2 &p2() const;
 
         const sf::Color &color() const;
         void color(const sf::Color &c);
 
-        void p1(const alg::vec2 &p1);
-        void p2(const alg::vec2 &p2);
+        void p1(const glm::vec2 &p1);
+        void p2(const glm::vec2 &p2);
 
     private:
-        alg::vec2 m_p1, m_p2;
+        glm::vec2 m_p1, m_p2;
         sf::Color m_color;
 
         std::size_t m_supports_count = 15;

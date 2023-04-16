@@ -1,7 +1,7 @@
 #ifndef FLAT_LINE_STRIP_HPP
 #define FLAT_LINE_STRIP_HPP
 
-#include "vec2.hpp"
+#include "glm/vec2.hpp"
 #include "vector_view.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -11,10 +11,10 @@ namespace prm
     {
     public:
         flat_line_strip(const sf::Color &color = sf::Color::White);
-        flat_line_strip(const std::vector<alg::vec2> &points,
+        flat_line_strip(const std::vector<glm::vec2> &points,
                         const sf::Color &color = sf::Color::White);
 
-        void append(const alg::vec2 &point);
+        void append(const glm::vec2 &point);
         void clear();
 
         const sf::Color &color() const;

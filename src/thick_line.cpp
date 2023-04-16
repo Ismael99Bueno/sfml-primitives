@@ -1,9 +1,17 @@
 #include "thick_line.hpp"
+#include <glm/geometric.hpp>
+
+#define VEC2_AS(vec)     \
+    {                    \
+        (vec).x, (vec).y \
+    }
+
+#define AS_VEC2(vec) glm::vec2((vec).x, (vec).y)
 
 namespace prm
 {
-    thick_line::thick_line(const alg::vec2 &p1,
-                           const alg::vec2 &p2,
+    thick_line::thick_line(const glm::vec2 &p1,
+                           const glm::vec2 &p2,
                            const sf::Color &color1,
                            const sf::Color &color2,
                            const float thickness,
@@ -13,8 +21,8 @@ namespace prm
                                                  m_color1(color1),
                                                  m_color2(color2),
                                                  m_rounded(rounded) {}
-    thick_line::thick_line(const alg::vec2 &p1,
-                           const alg::vec2 &p2,
+    thick_line::thick_line(const glm::vec2 &p1,
+                           const glm::vec2 &p2,
                            const float thickness,
                            const sf::Color &color,
                            const bool rounded) : thick_line(p1,
@@ -24,8 +32,8 @@ namespace prm
                                                             thickness,
                                                             rounded) {}
 
-    const alg::vec2 &thick_line::p1() const { return m_p1; }
-    const alg::vec2 &thick_line::p2() const { return m_p2; }
+    const glm::vec2 &thick_line::p1() const { return m_p1; }
+    const glm::vec2 &thick_line::p2() const { return m_p2; }
 
     const sf::Color &thick_line::color1() const { return m_color1; }
     const sf::Color &thick_line::color2() const { return m_color2; }
@@ -36,19 +44,19 @@ namespace prm
     float thick_line::thickness() const { return m_thickness; }
     void thick_line::thickness(const float thickness) { m_thickness = thickness; }
 
-    void thick_line::p1(const alg::vec2 &p1) { m_p1 = p1; }
-    void thick_line::p2(const alg::vec2 &p2) { m_p2 = p2; }
+    void thick_line::p1(const glm::vec2 &p1) { m_p1 = p1; }
+    void thick_line::p2(const glm::vec2 &p2) { m_p2 = p2; }
 
     void thick_line::color1(const sf::Color &c1) { m_color1 = c1; }
     void thick_line::color2(const sf::Color &c2) { m_color2 = c2; }
 
     void thick_line::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
-        const alg::vec2 dir = (m_p2 - m_p1).normalized(),
-                        offset = alg::vec2(-dir.y, dir.x) * m_thickness * 0.5f;
+        const glm::vec2 dir = glm::normalize(m_p2 - m_p1),
+                        offset = glm::vec2(-dir.y, dir.x) * m_thickness * 0.5f;
 
         sf::Vertex tline[4];
-        const alg::vec2 p1 = m_p1 + offset, p2 = m_p2 + offset,
+        const glm::vec2 p1 = m_p1 + offset, p2 = m_p2 + offset,
                         p3 = m_p2 - offset, p4 = m_p1 - offset;
         tline[0].position = VEC2_AS(p1);
         tline[1].position = VEC2_AS(p2);
