@@ -38,11 +38,7 @@ namespace prm
         void color2(const sf::Color &c2);
 
     private:
-<<<<<<< HEAD
-        glm::vec2 m_p1, m_p2;
-=======
         glm::vec2 m_p1{0.f}, m_p2{0.f};
->>>>>>> glm-transition
         float m_thickness;
         sf::Color m_color1, m_color2;
         bool m_rounded;
