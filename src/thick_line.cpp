@@ -1,13 +1,6 @@
 #include "thick_line.hpp"
 #include <glm/geometric.hpp>
 
-#define VEC2_AS(vec)     \
-    {                    \
-        (vec).x, (vec).y \
-    }
-
-#define AS_VEC2(vec) glm::vec2((vec).x, (vec).y)
-
 namespace prm
 {
     thick_line::thick_line(const glm::vec2 &p1,
@@ -58,10 +51,10 @@ namespace prm
         sf::Vertex tline[4];
         const glm::vec2 p1 = m_p1 + offset, p2 = m_p2 + offset,
                         p3 = m_p2 - offset, p4 = m_p1 - offset;
-        tline[0].position = VEC2_AS(p1);
-        tline[1].position = VEC2_AS(p2);
-        tline[2].position = VEC2_AS(p3);
-        tline[3].position = VEC2_AS(p4);
+        tline[0].position = {p1.x, p1.y};
+        tline[1].position = {p2.x, p2.y};
+        tline[2].position = {p3.x, p3.y};
+        tline[3].position = {p4.x, p4.y};
         tline[0].color = m_color1;
         tline[1].color = m_color2;
         tline[2].color = m_color2;
@@ -74,10 +67,10 @@ namespace prm
         const float r = 0.5f * m_thickness;
         sf::CircleShape start(r), end(r);
         start.setOrigin(r, r);
-        start.setPosition(VEC2_AS(m_p1));
+        start.setPosition({m_p1.x, m_p1.y});
         start.setFillColor(m_color1);
         end.setOrigin(r, r);
-        end.setPosition(VEC2_AS(m_p2));
+        end.setPosition({m_p2.x, m_p2.y});
         end.setFillColor(m_color2);
         target.draw(start);
         target.draw(end);

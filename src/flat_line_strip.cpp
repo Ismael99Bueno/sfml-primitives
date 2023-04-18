@@ -1,13 +1,6 @@
 #include "flat_line_strip.hpp"
 #include "debug.hpp"
 
-#define VEC2_AS(vec)     \
-    {                    \
-        (vec).x, (vec).y \
-    }
-
-#define AS_VEC2(vec) glm::vec2((vec).x, (vec).y)
-
 namespace prm
 {
     flat_line_strip::flat_line_strip(const sf::Color &color) : m_vertices(sf::LineStrip),
@@ -19,12 +12,12 @@ namespace prm
     {
         for (std::size_t i = 0; i < points.size(); i++)
         {
-            m_vertices[i].position = VEC2_AS(points[i]);
+            m_vertices[i].position = {points[i].x, points[i].y};
             m_vertices[i].color = color;
         }
     }
 
-    void flat_line_strip::append(const glm::vec2 &point) { m_vertices.append({VEC2_AS(point), m_color}); }
+    void flat_line_strip::append(const glm::vec2 &point) { m_vertices.append({{point.x, point.y}, m_color}); }
     void flat_line_strip::clear() { m_vertices.clear(); }
     void flat_line_strip::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
