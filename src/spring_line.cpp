@@ -41,7 +41,7 @@ namespace prm
         std::vector<glm::vec2> sp_line(1 + 4 * m_supports_count);
         const glm::vec2 segment = m_p2 - m_p1;
         const float base_length = (glm::length(segment) - m_left_padding - m_right_padding) / m_supports_count,
-                    angle = std::atan2f(segment.y, segment.x);
+                    angle = atan2f(segment.y, segment.x);
 
         glm::vec2 ref1 = m_p1 + glm::normalize(segment) * m_left_padding,
                   ref2 = m_p2 - glm::normalize(segment) * m_right_padding;
