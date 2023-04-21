@@ -48,9 +48,9 @@ namespace prm
         sp_line[0] = ref1;
         for (std::size_t i = 0; i < m_supports_count; i++)
         {
-            const float y = std::sqrtf(std::max(m_min_height,
-                                                m_supports_length * m_supports_length -
-                                                    base_length * base_length));
+            const float y = sqrtf(std::max(m_min_height,
+                                           m_supports_length * m_supports_length -
+                                               base_length * base_length));
             const glm::vec2 side1 = glm::rotate(glm::vec2(0.5f * base_length, y), angle),
                             side2 = glm::rotate(glm::vec2(0.5f * base_length, -y), angle);
 
