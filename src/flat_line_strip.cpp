@@ -1,5 +1,5 @@
-#include "flat_line_strip.hpp"
-#include "debug.hpp"
+#include "prm/flat_line_strip.hpp"
+#include "debug/debug.hpp"
 
 namespace prm
 {

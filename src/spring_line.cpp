@@ -1,6 +1,6 @@
-#include "spring_line.hpp"
-#include "flat_line_strip.hpp"
-#include "flat_line.hpp"
+#include "prm/spring_line.hpp"
+#include "prm/flat_line_strip.hpp"
+#include "prm/flat_line.hpp"
 #include <cmath>
 #include <glm/gtx/rotate_vector.hpp>
 

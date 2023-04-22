@@ -1,4 +1,4 @@
-#include "thick_line.hpp"
+#include "prm/thick_line.hpp"
 #include <glm/geometric.hpp>
 
 namespace prm

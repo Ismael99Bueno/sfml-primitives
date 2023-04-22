@@ -1,4 +1,4 @@
-#include "flat_line.hpp"
+#include "prm/flat_line.hpp"
 
 namespace prm
 {
