@@ -13,7 +13,7 @@ sfml-primitives is a simple C++ library providing line primitive implementations
 sfml-primitives depends on the following libraries:
 
 - [SFML](https://github.com/ismawno/SFML)
-- [vec-2D](https://github.com/ismawno/vec-2D)
+- [glm](https://github.com/g-truc/glm)
 - [debug-tools](https://github.com/ismawno/debug-tools)
 - [vector-view](https://github.com/ismawno/vector-view)
 
