@@ -15,7 +15,7 @@ sfml-primitives depends on the following libraries:
 - [SFML](https://github.com/ismawno/SFML)
 - [glm](https://github.com/g-truc/glm)
 - [debug-tools](https://github.com/ismawno/debug-tools)
-- [vector-view](https://github.com/ismawno/vector-view)
+- [container-view](https://github.com/ismawno/container-view)
 
 The script [fetch_dependencies.py](https://github.com/ismawno/sfml-primitives/scripts/fetch_dependencies.py) automatically adds all the dependencies as git submodules, provided that the user has already created their own repository and included the current project as a git submodule (or at least downloaded it into the repository). To ensure all runs smoothly once the script has been executed, do not rename the folders containing the various dependencies. All external dependencies, those not created by the same author, will be added as submodules within a folder called [vendor](https://github.com/ismawno/sfml-primitives/vendor).
 

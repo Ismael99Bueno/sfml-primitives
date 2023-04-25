@@ -53,7 +53,7 @@ namespace prm
     const sf::Color &thick_line_strip::color() const { return m_color; }
 
     const std::vector<std::pair<glm::vec2, sf::Color>> &thick_line_strip::vertices() const { return m_vertices; }
-    utils::vector_view<std::pair<glm::vec2, sf::Color>> thick_line_strip::vertices() { return m_vertices; }
+    utils::container_view<std::vector<std::pair<glm::vec2, sf::Color>>> thick_line_strip::vertices() { return m_vertices; }
 
     void thick_line_strip::color(const sf::Color &color) { m_color = color; }
     void thick_line_strip::alpha(const float alpha) { m_color.a = (sf::Uint8)(255.f * alpha); }

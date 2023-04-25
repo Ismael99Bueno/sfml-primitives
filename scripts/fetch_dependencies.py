@@ -76,7 +76,7 @@ def main() -> None:
     add_dependencies(
         [
             "debug-tools",
-            "vector-view",
+            "container-view",
         ],
         args.exec,
         args.branch,

@@ -2,7 +2,7 @@
 #define FLAT_LINE_STRIP_HPP
 
 #include "glm/vec2.hpp"
-#include "utils/vector_view.hpp"
+#include "utils/container_view.hpp"
 #include <SFML/Graphics.hpp>
 
 namespace prm
