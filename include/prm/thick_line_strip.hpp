@@ -24,7 +24,7 @@ namespace prm
         const sf::Color &color() const;
 
         const std::vector<std::pair<glm::vec2, sf::Color>> &vertices() const;
-        utils::container_view<std::vector<std::pair<glm::vec2, sf::Color>>> vertices();
+        utils::vector_view<std::pair<glm::vec2, sf::Color>> vertices();
 
         void color(const sf::Color &color);
         void alpha(float alpha);
