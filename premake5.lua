@@ -10,7 +10,7 @@ project "sfml-primitives"
       defines "SFML_STATIC"
    filter{}
 
-   pchheader "include/prm/pch.hpp"
+   pchheader "prm/pch.hpp"
    pchsource "src/pch.cpp"
    
 
