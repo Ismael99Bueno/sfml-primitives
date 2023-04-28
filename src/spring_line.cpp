@@ -1,8 +1,7 @@
+#include "prm/pch.hpp"
 #include "prm/spring_line.hpp"
 #include "prm/flat_line_strip.hpp"
 #include "prm/flat_line.hpp"
-#include <cmath>
-#include <glm/gtx/rotate_vector.hpp>
 
 namespace prm
 {

@@ -9,6 +9,9 @@ project "sfml-primitives"
    filter "system:windows"
       defines "SFML_STATIC"
    filter{}
+
+   pchheader "include/prm/pch.hpp"
+   pchsource "src/pch.cpp"
    
 
    targetdir("bin/" .. outputdir)
