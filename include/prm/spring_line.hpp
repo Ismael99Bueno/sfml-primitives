@@ -39,7 +39,7 @@ namespace prm
         sf::Color m_color;
 
         std::size_t m_supports_count = 15;
-        float m_supports_length = 20.f,
+        float m_supports_length = 5.f,
               m_left_padding = 0.f,
               m_right_padding = 0.f,
               m_min_height = 10.f;
