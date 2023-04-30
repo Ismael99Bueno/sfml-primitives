@@ -1,21 +1,32 @@
 project "sfml-primitives"
-   staticruntime "off"
-   kind "StaticLib"
+staticruntime "off"
+kind "StaticLib"
 
-   language "C++"
-   cppdialect "C++17"
-   filter "system:macosx"
-      buildoptions {"-Wall", "-Wextra", "-Wpedantic", "-Wconversion", "-Wno-unused-parameter"}
-   filter "system:windows"
-      defines "SFML_STATIC"
-   filter{}
+language "C++"
+cppdialect "C++17"
+filter "system:macosx"
+buildoptions {
+   "-Wall",
+   "-Wextra",
+   "-Wpedantic",
+   "-Wconversion",
+   "-Wno-unused-parameter"
+}
+filter "system:windows"
+defines "SFML_STATIC"
+filter {}
 
-   pchheader "prm/pch.hpp"
-   pchsource "src/pch.cpp"
-   
+pchheader "prm/pch.hpp"
+pchsource "src/pch.cpp"
 
-   targetdir("bin/" .. outputdir)
-   objdir("build/" .. outputdir)
+targetdir("bin/" .. outputdir)
+objdir("build/" .. outputdir)
 
-   files {"src/**.cpp", "include/**.hpp"}
-   includedirs {"../**/include", "../vendor/glm"}
+files {
+   "src/**.cpp",
+   "include/**.hpp"
+}
+includedirs {
+   "../**/include",
+   "../vendor/glm"
+}
