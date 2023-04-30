@@ -38,8 +38,8 @@ namespace prm
         glm::vec2 m_p1{0.f}, m_p2{0.f};
         sf::Color m_color;
 
-        std::size_t m_supports_count = 15;
-        float m_supports_length = 5.f,
+        std::size_t m_supports_count = 6;
+        float m_supports_length = 8.f,
               m_left_padding = 0.f,
               m_right_padding = 0.f,
               m_min_height = 10.f;
