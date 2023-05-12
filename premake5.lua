@@ -30,7 +30,7 @@ files {
 }
 includedirs {
    "include",
-   "%{wks.location}/debug-tools/include",
+   "%{wks.location}/debug-log-tools/include",
    "%{wks.location}/container-view/include",
    "%{wks.location}/vendor/glm",
    "%{wks.location}/vendor/SFML/include"
