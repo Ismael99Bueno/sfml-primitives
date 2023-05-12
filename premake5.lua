@@ -33,5 +33,6 @@ includedirs {
    "%{wks.location}/debug-log-tools/include",
    "%{wks.location}/container-view/include",
    "%{wks.location}/vendor/glm",
-   "%{wks.location}/vendor/SFML/include"
+   "%{wks.location}/vendor/SFML/include",
+   "%{wks.location}/vendor/spdlog/include"
 }
