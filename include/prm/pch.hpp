@@ -6,5 +6,8 @@
 #include <cmath>
 #include <glm/gtx/rotate_vector.hpp>
 #include <glm/geometric.hpp>
+#ifdef HAS_DEBUG_LOG_TOOLS
+#include "dbg/log.hpp"
+#endif
 
 #endif

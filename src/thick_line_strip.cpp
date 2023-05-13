@@ -1,7 +1,7 @@
 #include "prm/pch.hpp"
 #include "prm/thick_line_strip.hpp"
 #include "prm/thick_line.hpp"
-#include "dbg/log.hpp"
+
 
 namespace prm
 {
