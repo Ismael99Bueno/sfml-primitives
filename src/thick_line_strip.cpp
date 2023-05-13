@@ -25,22 +25,22 @@ namespace prm
     void thick_line_strip::append(const glm::vec2 &point) { m_vertices.emplace_back(point, m_color); }
     void thick_line_strip::erase(const std::size_t index)
     {
-        DBG_ASSERT(index < m_vertices.size(), "Index outside of vector bounds. index: %zu, size: %zu.\n", index, m_vertices.size())
+        DBG_ASSERT_ERROR(index < m_vertices.size(), "Index outside of vector bounds. index: {0}, size: {1}.\n", index, m_vertices.size())
         m_vertices.erase(m_vertices.begin() + (long)index);
     }
 
     void thick_line_strip::erase(const std::size_t from, const std::size_t to)
     {
-        DBG_ASSERT(from < m_vertices.size(), "Index outside of vector bounds. from: %zu, size: %zu.\n", from, m_vertices.size())
-        DBG_ASSERT(to < m_vertices.size(), "Index outside of vector bounds. to: %zu, size: %zu.\n", to, m_vertices.size())
-        DBG_ASSERT(from < to, "from index must be lower than to index. from: %zu, to: %zu.\n", from, to)
+        DBG_ASSERT_ERROR(from < m_vertices.size(), "Index outside of vector bounds. from: {0}, size: {1}.\n", from, m_vertices.size())
+        DBG_ASSERT_ERROR(to < m_vertices.size(), "Index outside of vector bounds. to: {0}, size: {1}.\n", to, m_vertices.size())
+        DBG_ASSERT_ERROR(from < to, "from index must be lower than to index. from: {0}, to: {1}.\n", from, to)
         m_vertices.erase(m_vertices.begin() + (long)from, m_vertices.begin() + (long)to);
     }
 
     void thick_line_strip::clear() { m_vertices.clear(); }
     void thick_line_strip::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
-        DBG_ASSERT(m_vertices.size() > 1, "The amount of points in a line strip must be greater than 1. Number of points: %zu.\n", m_vertices.size())
+        DBG_ASSERT_ERROR(m_vertices.size() > 1, "The amount of points in a line strip must be greater than 1. Number of points: {1}.\n", m_vertices.size())
         for (std::size_t i = 0; i < m_vertices.size() - 1; i++)
         {
             const auto &[p1, c1] = m_vertices[i];

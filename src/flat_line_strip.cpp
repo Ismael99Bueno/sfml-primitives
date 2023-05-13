@@ -22,7 +22,7 @@ namespace prm
     void flat_line_strip::clear() { m_vertices.clear(); }
     void flat_line_strip::draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
-        DBG_ASSERT(m_vertices.getVertexCount() > 1, "The amount of points in a line strip must be greater than 1. Number of points: %zu.\n", m_vertices.getVertexCount())
+        DBG_ASSERT_ERROR(m_vertices.getVertexCount() > 1, "The amount of points in a line strip must be greater than 1. Number of points: %zu.\n", m_vertices.getVertexCount())
         target.draw(m_vertices, states);
     }
 
