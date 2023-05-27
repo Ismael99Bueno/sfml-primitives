@@ -7,28 +7,27 @@
 
 namespace prm
 {
-    class flat_line_strip : public sf::Drawable
-    {
-    public:
-        flat_line_strip(const sf::Color &color = sf::Color::White);
-        flat_line_strip(const std::vector<glm::vec2> &points,
-                        const sf::Color &color = sf::Color::White);
+class flat_line_strip : public sf::Drawable
+{
+  public:
+    flat_line_strip(const sf::Color &color = sf::Color::White);
+    flat_line_strip(const std::vector<glm::vec2> &points, const sf::Color &color = sf::Color::White);
 
-        void append(const glm::vec2 &point);
-        void clear();
+    void append(const glm::vec2 &point);
+    void clear();
 
-        const sf::Color &color() const;
-        const sf::VertexArray &vertices() const;
+    const sf::Color &color() const;
+    const sf::VertexArray &vertices() const;
 
-        void color(const sf::Color &color);
-        void alpha(float alpha);
+    void color(const sf::Color &color);
+    void alpha(float alpha);
 
-    private:
-        sf::VertexArray m_vertices;
-        sf::Color m_color;
+  private:
+    sf::VertexArray m_vertices;
+    sf::Color m_color;
 
-        void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
-    };
-}
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
+};
+} // namespace prm
 
 #endif

@@ -6,46 +6,41 @@
 
 namespace prm
 {
-    class spring_line : public sf::Drawable
-    {
-    public:
-        spring_line(const glm::vec2 &p1,
-                    const glm::vec2 &p2,
-                    const sf::Color &color = sf::Color::White);
+class spring_line : public sf::Drawable
+{
+  public:
+    spring_line(const glm::vec2 &p1, const glm::vec2 &p2, const sf::Color &color = sf::Color::White);
 
-        std::size_t supports_count() const;
-        float supports_length() const;
-        float left_padding() const;
-        float right_padding() const;
-        float min_height() const;
+    std::size_t supports_count() const;
+    float supports_length() const;
+    float left_padding() const;
+    float right_padding() const;
+    float min_height() const;
 
-        void supports_count(std::size_t supports_count);
-        void supports_length(float supports_length);
-        void left_padding(float left_padding);
-        void right_padding(float right_padding);
-        void min_height(float min_height);
+    void supports_count(std::size_t supports_count);
+    void supports_length(float supports_length);
+    void left_padding(float left_padding);
+    void right_padding(float right_padding);
+    void min_height(float min_height);
 
-        const glm::vec2 &p1() const;
-        const glm::vec2 &p2() const;
+    const glm::vec2 &p1() const;
+    const glm::vec2 &p2() const;
 
-        const sf::Color &color() const;
-        void color(const sf::Color &c);
+    const sf::Color &color() const;
+    void color(const sf::Color &c);
 
-        void p1(const glm::vec2 &p1);
-        void p2(const glm::vec2 &p2);
+    void p1(const glm::vec2 &p1);
+    void p2(const glm::vec2 &p2);
 
-    private:
-        glm::vec2 m_p1{0.f}, m_p2{0.f};
-        sf::Color m_color;
+  private:
+    glm::vec2 m_p1{0.f}, m_p2{0.f};
+    sf::Color m_color;
 
-        std::size_t m_supports_count = 6;
-        float m_supports_length = 8.f,
-              m_left_padding = 0.f,
-              m_right_padding = 0.f,
-              m_min_height = 10.f;
+    std::size_t m_supports_count = 6;
+    float m_supports_length = 8.f, m_left_padding = 0.f, m_right_padding = 0.f, m_min_height = 10.f;
 
-        void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
-    };
-}
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
+};
+} // namespace prm
 
 #endif
